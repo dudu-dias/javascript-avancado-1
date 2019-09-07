@@ -8,18 +8,15 @@ class NegociacaoController{
     
     adiciona(event){
         event.preventDefault();
-        
-        let helper = new DataHelper()
-        let data = helper.textoParaData(this._inputData.value);
-
+                
         let negociacao = new Negociacao(
-            data,
+            DataHelper.textoParaData(this._inputData.value),
             this._inputQuantidade.value,
             this._inputValor.value
         );
     console.log(negociacao); 
     
-    console.log(helper.dataParaTexto(negociacao.data));
+    console.log(DataHelper.dataParaTexto(negociacao.data));
         
     }
 }
